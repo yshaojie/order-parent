@@ -10,6 +10,7 @@
     <modules>
         <module>order-api</module>
         <module>order-manager</module>
+        <module>server-embedded-tomcat</module>
     </modules>
     <packaging>pom</packaging>
 
