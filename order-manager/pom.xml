@@ -14,11 +14,11 @@
         <spring-boot-version>1.2.5.RELEASE</spring-boot-version>
     </properties>
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-web</artifactId>-->
-            <!--<version>${spring-boot-version}</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot-version}</version>
+        </dependency>
 
         <!--logbcak支持表达式-->
         <dependency>
