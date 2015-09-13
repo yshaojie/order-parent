@@ -14,7 +14,7 @@ server_jvm_args="{{server_jvm_args}}"
 server_name="{{server_name}}"
 server_main_class="{{server_main_class}}"
 server_home="{{server_home}}"
-server_log_home="{{server_name}}"
+server_log_home="{{server_log_home}}"
 server_resources="{{server_home}}/resources/"
 ###########################################
 
@@ -30,9 +30,15 @@ start_server() {
         echo "${server_name} is started,the pid is ${pids[@]}"
         exit 1
     fi
-
+    echo "server_args=${server_args}"
+    echo "server_jvm_args=${server_jvm_args}"
+    echo "server_name=${server_name}"
+    echo "server_main_class=${server_main_class}"
+    echo "server_home=${server_home}"
+    echo "server_log_home=${server_log_home}"
+    echo "server_resources=${server_resources}"
     #find logback-classic jar
-    logbacks=( `find lib/ -name logback-classic* | sort -fr` )
+    logbacks=( `find ${server_home}/lib/ -name logback-classic* | sort -fr` )
     if [ "${#logbacks[@]}" -gt 0 ]; then
         #exist logback-classic jar
         echo "find ${logbacks[0]}, set first to the java classpath"
