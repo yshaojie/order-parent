@@ -11,6 +11,8 @@
         <module>order-api</module>
         <module>order-manager</module>
         <module>server-embedded-tomcat</module>
+        <module>import-data</module>
+        <module>init-server</module>
     </modules>
     <packaging>pom</packaging>
 
