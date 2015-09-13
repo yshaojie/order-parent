@@ -99,6 +99,6 @@ public class ServerInit {
         compile.execute(params, fileWriter);
         fileWriter.flush();
         IOUtils.closeQuietly(fileWriter);
-        System.out.println("init server ["+server_name+"]succcess");
+        System.out.println("init server ["+server_name+"] succcess");
     }
 }

@@ -30,13 +30,13 @@ start_server() {
         echo "${server_name} is started,the pid is ${pids[@]}"
         exit 1
     fi
-    echo "server_args=${server_args}"
-    echo "server_jvm_args=${server_jvm_args}"
-    echo "server_name=${server_name}"
-    echo "server_main_class=${server_main_class}"
-    echo "server_home=${server_home}"
-    echo "server_log_home=${server_log_home}"
-    echo "server_resources=${server_resources}"
+    echo "  server_args=${server_args}"
+    echo "  server_jvm_args=${server_jvm_args}"
+    echo "  server_name=${server_name}"
+    echo "  server_main_class=${server_main_class}"
+    echo "  server_home=${server_home}"
+    echo "  server_log_home=${server_log_home}"
+    echo "  server_resources=${server_resources}"
     #find logback-classic jar
     logbacks=( `find ${server_home}/lib/ -name logback-classic* | sort -fr` )
     if [ "${#logbacks[@]}" -gt 0 ]; then
