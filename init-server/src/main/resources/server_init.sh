@@ -1,7 +1,6 @@
 #!/bin/bash
 
 main_class=com.jyall.ServerInit
-echo $#
 if [ $# -lt 1 ]; then
     echo "Usage ${0} server_conf_path"
     exit 1
@@ -22,7 +21,7 @@ done
 # Get standard environment variables
 PRGDIR=`dirname "$PRG"`
 
-server_home=`cd "$PRGDIR" >/dev/null; pwd`
+server_home=`cd "$PRGDIR/.." >/dev/null; pwd`
 
 
 for i in `ls ${server_home}/lib/ | sort -rf`

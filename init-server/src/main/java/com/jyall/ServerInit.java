@@ -58,6 +58,12 @@ public class ServerInit {
         if (!valid) {//参数检测不通过
             System.exit(1);
         }
+
+        //jvm 参数不包含-server的话,强制添加该参数
+        if (!server_jvm_args.contains("-server")) {
+            server_jvm_args = "-server "+server_jvm_args;
+        }
+
         String server_home = SERVER_ROOT+server_name;
         String server_log_home = LOG_ROOT+server_name;
         File logHome = new File(server_log_home);

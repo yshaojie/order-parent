@@ -17,12 +17,12 @@
                 <include>server_init.sh</include>
             </includes>
             <fileMode>0755</fileMode>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory>/bin/</outputDirectory>
         </fileSet>
         <fileSet>
             <directory>src/main/resources</directory>
             <includes>
-                <include>server_conf.properties</include>
+                <include>server_conf.properties.example</include>
             </includes>
             <outputDirectory>/conf</outputDirectory>
         </fileSet>
