@@ -48,7 +48,7 @@ start_server() {
     if [ "${#logbacks[@]}" -gt 0 ]; then
         #exist logback-classic jar
         echo "find ${logbacks[0]}, set first to the java classpath"
-        server_class_path=${server_home}/${logbacks[0]}
+        server_class_path=${logbacks[0]}
     fi
 
     #iterator server jar libs
