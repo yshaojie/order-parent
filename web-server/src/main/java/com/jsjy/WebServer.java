@@ -32,7 +32,6 @@ public class WebServer {
         tomcat.setHostname(serverAddress);
         tomcat.setPort(serverPort);
         tomcat.addWebapp(contextpath, webappDir);
-        System.out.println("configuring app with basedir: " + webappDir);
         tomcat.start();
         tomcat.getServer().await();
     }
