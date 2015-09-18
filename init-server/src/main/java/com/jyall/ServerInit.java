@@ -16,8 +16,8 @@ import java.util.Properties;
  * Created by shaojieyue on 9/13/15.
  */
 public class ServerInit {
-    public static final String LOG_ROOT = "/home/shaojieyue/logs/";
-    public static final String SERVER_ROOT = "/home/shaojieyue/servers/";
+    public static final String LOG_ROOT = "/data/logs/";
+    public static final String SERVER_ROOT = "/servers/";
     public static void main(String[] args) throws IOException {
         if (args == null || args.length<1) {
             System.err.println("please set zhe config file.");
