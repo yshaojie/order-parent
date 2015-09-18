@@ -22,7 +22,7 @@ public class WebServer {
         System.setProperty("server.ip",serverAddress);
         System.setProperty("server.port",serverPort+"");
         System.setProperty("server.contextpath",contextpath);
-        String webappDir = getWebappDir();;
+        String webappDir = getWebappPath();;
         Tomcat tomcat = new Tomcat();
         String workDir = getWorkDir(serverPort);
         if (workDir != null) {
@@ -37,7 +37,7 @@ public class WebServer {
         tomcat.getServer().await();
     }
 
-    private String getWebappDir() {
+    private String getWebappPath() {
         //开发环境webapp相对路径
         String webappDirLocation = "src/main/webapp/";
         File webappDir = new File(webappDirLocation);
@@ -45,7 +45,6 @@ public class WebServer {
         final String pdir = System.getProperty("webapp.dir");
         if (notBlank(pdir)) {
             webappDir = new File(pdir.trim());
-            System.out.println("use webapp.dir webapp: "+webappDir.getAbsolutePath());
         }
 
         //获取server路径,参数server_home由服务启动时指定
@@ -53,14 +52,15 @@ public class WebServer {
         //serverHome 非空
         if (notBlank(serverHome)) {//优先级最高
             webappDir = new File(serverHome.trim()+"/resources/webapp");
-            System.out.println("use server_home webapp: "+webappDir.getAbsolutePath());
         }
+        String webappPath = webappDir.getAbsolutePath();
+        System.out.println("use webapp: "+webappPath);
 
         //webapp目录没有找到
         if (!webappDir.exists()) {
-            throw new IllegalArgumentException("webapp 目录不存在,启动server失败");
+            throw new IllegalArgumentException("webapp dir not exist. dir="+webappPath);
         }
-        return webappDir.getAbsolutePath();
+        return webappPath;
     }
 
     private boolean notBlank(String str) {
