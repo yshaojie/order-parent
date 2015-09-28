@@ -10,7 +10,7 @@ import java.util.List;
  * Created by shaojieyue on 9/11/15.
  */
 public class District {
-    private static int id=10000000;
+    private static int id=10500000;
     private synchronized static int  getId(){
         id++;
         return id;
@@ -18,7 +18,7 @@ public class District {
 
     public static final int init(Connection conn) throws SQLException {
         final Statement statement = conn.createStatement();
-        return statement.executeUpdate("delete from ysj_cs.m_district where id>0");
+        return statement.executeUpdate("delete from ysj_cs.m_district where id>10500000");
     }
 
     public static final int insert(Connection conn, List<String> cols,List values) throws SQLException {
